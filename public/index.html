@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f6feb">
+  <title>EAN scanner</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/" class="active">Scan</a>
+    <a href="/missing">Missing names</a>
+    <a href="/products">Products</a>
+  </nav>
+  <main>
+    <div id="status" class="status idle">Press "Start camera" and point it at a barcode</div>
+    <div class="camera"><video id="video" playsinline muted></video></div>
+    <button id="start" class="primary">Start camera</button>
+    <form id="manual" class="manual">
+      <input id="manual-ean" inputmode="numeric" pattern="[0-9]*" placeholder="…or type an EAN" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </main>
+  <script src="https://unpkg.com/@zxing/browser@0.1.5/umd/zxing-browser.min.js"></script>
+  <script src="/common.js"></script>
+  <script src="/scan.js"></script>
+</body>
+</html>
